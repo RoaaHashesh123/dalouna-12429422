@@ -31,7 +31,7 @@ body{
 }
 
 .site-header{
-  background: #fbfbfb;
+  background: #f7efe6;
   border-bottom: 1px solid rgba(0,0,0,0.03);
   position:sticky;
   top:0;
@@ -59,35 +59,43 @@ body{
   font-weight:600;
   font-size:14px;
 }
+.main-nav a:hover{
+   color: #49a078; ;
+   }
 
 .hero{
   position:relative;
-  height:420px;
+  height:620px;
   margin-bottom:36px;
   overflow:hidden;
 }
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background-image: url("../images/bg.jpg");
-  background-size:cover;
-  background-position:center;
-  filter:brightness(0.95);
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* تحافظ على أبعاد الصورة وتغطي المنطقة */
   transform: scale(1.02);
+  z-index: 1;  /* تحت النص */
 }
 
 .hero-overlay{
   position:absolute;
   inset:0;
   background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+    z-index: 2;
+
 }
 .hero-content{
-  position:relative;
-  z-index:10;
-  text-align:center;
-  padding-top:58px;
+  position:absolute;
+  text-align:center  !important;
   color:white;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
 }
+
 .hero-category{
   display:inline-block;
   background: #49a078;
@@ -103,6 +111,7 @@ body{
   margin:6px 0 10px;
   letter-spacing:0.4px;
   text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  
 }
 .hero-sub{
   max-width:760px;
@@ -115,14 +124,23 @@ body{
 .btn-primary{
   display:inline-block;
   background:var(--deep);
-  color:white;
+ color:white;
   text-decoration:none;
   padding:12px 26px;
   border-radius:26px;
   font-weight:700;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0 6px 16px rgba(11,107,99,0.25);
+box-shadow: 0 6px 16px rgba(11,107,99,0.25);
 }
+.hero-content .btn-primary:hover {
+  background: #49a078; /* أخضر فاتح */
+  color: #fff;          /* لون النص أبيض */
+  
+  transition: 0.3s;
+}
+
+
+ 
 
 .main-grid{
   margin-top: 16px;
@@ -209,7 +227,7 @@ body{
      }
 .menu-list li{ 
   padding:12px 0;
-   border-bottom:1px dashed rgba(0,0,0,0.04); 
+   border-bottom:1px dashed rgba(0,0,0,0.09); 
   }
 .menu-list li strong{ 
   display:inline-block; 
@@ -241,12 +259,12 @@ body{
 .hours-table{
    width:100%;
     border-collapse:collapse; 
-    color:var(--muted); 
+    color:black; 
   }
 .hours-table td{
   padding:10px 0; 
   font-size:15px;
-   border-bottom:1px dashed rgba(0,0,0,0.04); 
+   border-bottom:1px dashed rgba(0,0,0,0.09); 
   }
 .hours-table .time{
    text-align:right; color:#222; 
@@ -315,10 +333,10 @@ body{
 
 .site-footer{
    padding:26px 0;
-    color:#1f1f1f; 
+    color:#6b6b6b; 
     font-size:13px; 
-    border-top:1px solid rgba(0,0,0,0.03);
-     background:#fbfbfb;
+    border-top:1px solid rgba(0,0,0,0.09);
+     background:#f7efe6;
       margin-top:28px; 
     }
 .footer-inner{
@@ -342,7 +360,7 @@ body{
      }
   .hero-title{ 
     font-size:30px;
-     color:#216869;
+     color:white;
     }
 
 }
